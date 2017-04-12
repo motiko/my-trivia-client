@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="pure-menu pure-menu-horizontal">
+    {{#link-to 'index' class="pure-menu-heading pure-menu-link"}}
+      Trivia
+    {{/link-to}}
+    <ul class="pure-menu-list">
+       <li class="pure-menu-item">
+          {{#link-to 'admin.questions' class="pure-menu-link"}}
+            Questions
+          {{/link-to}}
+        </li>
+        <li class="pure-menu-item">
+          {{#link-to 'admin.users' class="pure-menu-link"}}
+            Users
+          {{/link-to}}
+        </li>
+    </ul>
+  </div>
+  <div class="body">
+    {{outlet}}
+  </div>
+</div>

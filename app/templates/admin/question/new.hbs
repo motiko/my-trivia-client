@@ -1,0 +1,18 @@
+<form {{action 'save' model on='submit'}}>
+  {{#each model.errors.base as |error|}}
+    <p class="error">{{error.message}}</p>
+  {{/each}}
+
+  <p>{{input value=model.question_text placeholder="Question" name="question_text"}}</p>
+  {{#each model.errors.question_text as |error|}}
+    <p class="error">{{error.message}}</p>
+  {{/each}}
+
+  {{#each model.answers as |answer index| }}
+    {{input value=answer.text }}
+    {{input type="checkbox" checked=answer.correct name=(concat "anwer_" index)}}
+  {{/each}}
+
+
+  <p><button class="pure-button pure-button-primary">Create</button>  {{#link-to 'admin.questions' class="pure-button"}}Cancel{{/link-to}}</p>
+</form>

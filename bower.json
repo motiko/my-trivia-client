@@ -1,5 +1,7 @@
 {
   "name": "trivia",
   "dependencies": {
+    "pure": "~0.6.0",
+    "ember-one-way-controls": "~2.0.0"
   }
 }

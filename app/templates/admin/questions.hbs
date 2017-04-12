@@ -1,0 +1,5 @@
+
+{{#each model as |question|}}
+ {{question-view question=question}}
+{{/each}}
+{{#link-to 'admin.question/new' class='pure-button pure-button-primary'}} New {{/link-to}}

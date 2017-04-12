@@ -1,0 +1,15 @@
+<h4>
+  {{question.question_text}}
+  <button {{action "delete"}} class="pure-primary">
+    Delete
+  </button>
+  <button {{action toggleProperty "isEdit"}} class="pure-primary">
+    Edit
+  </button>
+</h4>
+
+<ul>
+  {{#each question.answers as |answer|}}
+    <li> {{answer.text}} {{if answer.correct "✓"}} </li>
+  {{/each}}
+</ul>

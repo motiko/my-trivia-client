@@ -1,0 +1,21 @@
+<h4>
+
+  {{one-way-input type="text" class="form-control"  value=question.question_text
+    update=(action "textDidChange")}}
+  <button {{action "delete"}} class="pure-primary">
+    Delete
+  </button>
+  <button {{action "save"}} class="pure-primary">
+    Save
+  </button>
+  <button {{action "cancel"}} class="pure-primary">
+    cancel
+  </button>
+</h4>
+
+<ul>
+  {{#each question.answers as |answer|}}
+
+    <li> {{input type="text" value=answer.text }} {{input type="checkbox" checked=answer.correct }} </li>
+  {{/each}}
+</ul>
