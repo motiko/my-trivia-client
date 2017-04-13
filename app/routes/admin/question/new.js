@@ -2,20 +2,19 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    let newRecord = this.store.createRecord('question');
-    newRecord.set('answers', Array(4).fill().map(() => (Ember.Object.create({text:"",correct:false}))))
-    return newRecord
+    return Ember.Object.create({
+      text : "",
+      answers: Array(4).fill().map(() => (Ember.Object.create({text:"123",correct:false})))
+    })
   },
   actions: {
-    save(record) {
-      record.save()
+    saveQuestion(properties) {
+      let newRecord = this.store.createRecord('question', properties);
+      newRecord.save()
         .then(() => this.transitionTo('admin.questions'))
     },
-
-    willTransition() {
-      this._super(...arguments);
-      const record = this.controller.get('model')
-      record.rollbackAttributes()
+    goBack(){
+      this.transitionTo('admin.questions')
     }
   }
 });

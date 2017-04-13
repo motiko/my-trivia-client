@@ -1,21 +1,36 @@
-<h4>
+<div class="pure-g">
+<div class="pure-u-1-3">
+<form class="pure-form pure-form-aligned">
+  <fieldset>
+       <legend>New Question</legend>
+        <div class="pure-control-group">
+          <label for="question-text">Question</label>
+          {{input type="text" class="pure"  value=text id="question-text"}}
+          {{#unless validQuestionText}}
+            <span class="pure-form-message">This is a required field.</span>
+          {{/unless }}
 
-  {{one-way-input type="text" class="form-control"  value=question.question_text
-    update=(action "textDidChange")}}
-  <button {{action "delete"}} class="pure-primary">
-    Delete
-  </button>
-  <button {{action "save"}} class="pure-primary">
-    Save
-  </button>
-  <button {{action "cancel"}} class="pure-primary">
-    cancel
-  </button>
-</h4>
+        </div>
+              {{#each answers key="correct" as |answer i|}}
+               <div class="pure-control-group">
+                <label for="answer_{{i}}">Answer {{add i 1}}</label>
+                <input type="text" id="answer_{{i}}" value={{answer.text}}
+                  oninput={{action "answerDidChange" i }}/>
+                <input type="checkbox" id="answer_correct_{{i}}" value={{answer.correct}}
+                  onchange={{action "answerCorrectDidChange" i }}/>
+                  {{#unless (lookup validAnswers i)}}
+                    <span class="pure-form-message">This is a required field.</span>
+                  {{/unless }}
+              </div>
+              {{/each}}
 
-<ul>
-  {{#each question.answers as |answer|}}
-
-    <li> {{input type="text" value=answer.text }} {{input type="checkbox" checked=answer.correct }} </li>
-  {{/each}}
-</ul>
+          <button {{action "save"}} class="pure-button pure-primary">
+            Save
+          </button>
+          <button {{action "cancel"}} class="pure-button pure-primary">
+            Cancel
+          </button>
+  </fieldset>
+</form>
+</div>
+</div>

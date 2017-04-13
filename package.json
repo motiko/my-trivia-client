@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Small description for trivia goes here",
   "license": "MIT",
-  "author": "",
+  "author": "MK",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -33,7 +33,6 @@
     "ember-data": "^2.12.0",
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.6.0",
-    "ember-one-way-controls": "^2.0.0",
     "ember-pure": "0.0.7",
     "ember-resolver": "^2.0.3",
     "ember-source": "~2.12.0",
@@ -43,5 +42,8 @@
   "engines": {
     "node": ">= 4"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "vinyl-fs": "^2.4.4"
+  }
 }
