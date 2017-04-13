@@ -10,7 +10,7 @@ Router.map(function() {
   this.route('admin', function(){
     this.route('questions');
     this.route('question/new');
-    this.route('question/edit',);
+    this.route('question/edit');
     this.route('users');
   });
 

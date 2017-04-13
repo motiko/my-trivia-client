@@ -25,8 +25,6 @@ export default Ember.Component.extend({
 
     answerDidChange(index, event){
       this.set(`answers.${index}.text`, event.target.value)
-      //this.get('answers').pushObject({text:"qwe",correct:true})
-      this.rerender();
     },
 
     answerCorrectDidChange(index, event){
@@ -37,10 +35,10 @@ export default Ember.Component.extend({
       if(!this.validate()){
         return
       }
-      this.sendAction('save',this.getProperties(['text', 'answers']) )
+      this.attrs.save(this.getProperties(['text', 'answers']) )
     },
     cancel(){
-      this.sendAction('cancel')
+      this.attrs.cancel()
     }
   }
 });
