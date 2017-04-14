@@ -1,22 +1,26 @@
-<div class="container">
-  <div class="pure-menu pure-menu-horizontal">
-    {{#link-to 'index' class="pure-menu-heading pure-menu-link"}}
-      Trivia
-    {{/link-to}}
-    <ul class="pure-menu-list">
-       <li class="pure-menu-item">
-          {{#link-to 'admin.questions' class="pure-menu-link"}}
-            Questions
-          {{/link-to}}
-        </li>
-        <li class="pure-menu-item">
-          {{#link-to 'admin.users' class="pure-menu-link"}}
-            Users
-          {{/link-to}}
-        </li>
-    </ul>
-  </div>
-  <div class="body">
-    {{outlet}}
-  </div>
-</div>
+{{#paper-toolbar}}
+  {{#paper-toolbar-tools}}
+    {{#paper-button iconButton}}
+      {{#link-to 'index' }}
+        Trivia
+      {{/link-to}}
+    {{/paper-button}}
+    {{#paper-button }}
+      {{#link-to 'admin.questions'}}
+        Questions
+      {{/link-to}}
+    {{/paper-button }}
+
+    {{#paper-button }}
+      {{#link-to 'admin.users'}}
+        Users
+      {{/link-to}}
+    {{/paper-button }}
+
+    <span class="flex"></span>
+    {{#paper-button iconButton=true}}
+      {{paper-icon "more_vert"}}
+    {{/paper-button}}
+  {{/paper-toolbar-tools}}
+{{/paper-toolbar}}
+{{outlet}}

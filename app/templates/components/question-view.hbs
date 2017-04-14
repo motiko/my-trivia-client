@@ -1,15 +1,13 @@
-<h4>
-  {{question.text}}
-  <button {{action "delete"}} class="pure-primary">
-    Delete
-  </button>
-  <button {{action toggleProperty "isEdit"}} class="pure-primary">
-    Edit
-  </button>
-</h4>
+{{#paper-item class="md-2-line"}}
+  {{#paper-button iconButton=true onClick=(action "delete") class="md-avatar-icon"}}
+    {{paper-icon "mode-edit"}}
+  {{/paper-button}}
+  {{#paper-button iconButton=true onClick=(action "delete") class="md-avatar-icon"}}
+    {{paper-icon "delete"  }}
+  {{/paper-button}}
 
-<ul>
-  {{#each question.answers as |answer|}}
-    <li> {{answer.text}} {{if answer.correct "✓"}} </li>
-  {{/each}}
-</ul>
+  <div class="md-list-item-text">
+    <h3>{{question.text}}</h3>
+    <p>nature</p>
+  </div>
+{{/paper-item}}

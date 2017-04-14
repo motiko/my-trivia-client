@@ -9,7 +9,7 @@ export default function() {
              "type": "questions",
              "id": 100,
              "attributes":{
-               "question-text": "What is the capital of France?",
+               "text": "What is the capital of France?",
                answers: [
                  { text:"Rome", correct: false} ,
                  { text:"London", correct: false},
@@ -22,7 +22,7 @@ export default function() {
              "type": "questions",
              "id": 101,
              "attributes":{
-               "question-text": "What is water checmical compound?",
+               "text": "What is water checmical compound?",
                answers: [
                  { text:"C3", correct: false} ,
                  { text:"H20", correct: false},

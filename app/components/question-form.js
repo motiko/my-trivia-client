@@ -5,17 +5,16 @@ export default Ember.Component.extend({
 
   text:    Ember.computed.reads('question.text'),
   answers: Ember.computed.reads('question.answers'),
+  correct_answer_index: 0,
 
   validQuestionText: Ember.computed.notEmpty('text'),
   validAnswers: Ember.computed.map('answers.@each.text', function(answer){
       return answer.text != ""
     }),
-  correctAnswers: Ember.computed.mapBy('answers', 'correct'),
 
   validate(){
     return (this.get('validQuestionText') &&
-            this.get('validAnswers').every(v => v) &&
-            this.get('correctAnswers').filter(v => v).length == 1)
+            this.get('validAnswers').every(v => v))
   },
 
   actions: {
@@ -35,6 +34,7 @@ export default Ember.Component.extend({
       if(!this.validate()){
         return
       }
+      this.get('answers')[this.get('correct_answer_index')].correct = true
       this.attrs.save(this.getProperties(['text', 'answers']) )
     },
     cancel(){
