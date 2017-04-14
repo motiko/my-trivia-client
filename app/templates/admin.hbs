@@ -1,22 +1,15 @@
 {{#paper-toolbar}}
   {{#paper-toolbar-tools}}
-    {{#paper-button iconButton}}
-      {{#link-to 'index' }}
+    {{#paper-button iconButton onClick=(transition-to 'index')}}
+    {{paper-icon "home"}}
         Trivia
-      {{/link-to}}
     {{/paper-button}}
-    {{#paper-button }}
-      {{#link-to 'admin.questions'}}
+    {{#paper-button onClick=(transition-to 'admin.questions')}}
         Questions
-      {{/link-to}}
     {{/paper-button }}
-
-    {{#paper-button }}
-      {{#link-to 'admin.users'}}
+    {{#paper-button onClick=(transition-to 'admin.users')}}
         Users
-      {{/link-to}}
     {{/paper-button }}
-
     <span class="flex"></span>
     {{#paper-button iconButton=true}}
       {{paper-icon "more_vert"}}
