@@ -1,3 +1,8 @@
+{{#paper-button raised=true onClick=(transition-to "admin.question/new")}}
+New
+{{/paper-button}}
+
+
 {{#paper-list}}
         {{#paper-subheader}}Questions{{/paper-subheader}}
         {{#each model as |question|}}
@@ -5,7 +10,3 @@
           {{paper-divider}}
         {{/each}}
 {{/paper-list}}
-
-{{#paper-button raised=true onClick=(transition-to "admin.question/new")}}
-New
-{{/paper-button}}

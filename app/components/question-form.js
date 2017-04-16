@@ -17,6 +17,11 @@ export default Ember.Component.extend({
             this.get('validAnswers').every(v => v))
   },
 
+  didInsertElement() {
+    this._super(...arguments)
+    this.$('textarea')[0].focus()
+  },
+
   actions: {
     textDidChange(value){
       this.set('text', value)

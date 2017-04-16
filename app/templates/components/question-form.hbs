@@ -1,13 +1,13 @@
 {{#paper-content class="layout-column flex-offset-10 md-padding"}}
   <div class="layout-row">
     <div class="flex-90">
-    {{paper-input
-          textarea=true block=true maxlength=300
-          label="Question Text"
-          value=text
-          onChange=(action (mut text))
-          required=true
-          errorMessages=(hash required="Question is required.")}}
+      {{paper-input
+            textarea=true block=true maxlength=300
+            label="Question Text"
+            value=text
+            onChange=(action (mut text))
+            required=true
+            errorMessages=(hash required="Question is required.")}}
     </div>
   </div>
   {{#paper-radio-group
