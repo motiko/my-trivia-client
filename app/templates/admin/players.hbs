@@ -1,5 +1,18 @@
-<ul>
+
   {{#each model as |player|}}
-  <li> {{player.name}}</li>
+
+      {{#paper-card as  |card|}}
+        {{#card.title as |title|}}
+          {{#title.text as |text|}}
+            {{#text.headline}}{{player.name}}{{/text.headline}}
+            {{#text.headline}}{{player.email}}{{/text.headline}}
+          {{/title.text}}
+          {{title.media size="xs" src=player.img_url alt=player.name title=player.name}}
+        {{/card.title}}
+        {{#card.actions}}
+          {{#paper-button}}Edit{{/paper-button}}
+          {{#paper-button}}Delete{{/paper-button}}
+        {{/card.actions}}
+      {{/paper-card}}
+
   {{/each}}
-</ul>

@@ -1,5 +1,18 @@
-<ul>
+<div class="layout-row layout-wrap">
   {{#each model as |avatar|}}
-   <img src={{avatar.img_url}} alt={{avatar.name}}/>
+    <div class="flex-20">
+      {{#paper-card as  |card|}}
+        {{#card.title as |title|}}
+          {{#title.text as |text|}}
+            {{#text.headline}}{{avatar.name}}{{/text.headline}}
+          {{/title.text}}
+          {{title.media size="xs" src=avatar.img_url alt=avatar.name title=avatar.name}}
+        {{/card.title}}
+        {{#card.actions}}
+          {{#paper-button}}Edit{{/paper-button}}
+          {{#paper-button}}Delete{{/paper-button}}
+        {{/card.actions}}
+      {{/paper-card}}
+    </div>
   {{/each}}
-</ul>
+</div>
