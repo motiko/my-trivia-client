@@ -1,0 +1,37 @@
+{{#paper-toolbar}}
+  {{#paper-toolbar-tools}}
+    {{#paper-button iconButton onClick=(transition-to 'index')}}
+      {{paper-icon "play-arrow"}}
+        Play
+    {{/paper-button}}
+    {{#paper-button onClick=(transition-to 'index')}}
+      {{paper-icon "format-list-numbered"}}
+        High Score
+    {{/paper-button }}
+    {{#paper-button onClick=(transition-to 'index')}}
+      {{paper-icon "star"}}
+        History
+    {{/paper-button }}
+    {{#paper-button onClick=(transition-to 'index')}}
+      {{paper-icon "people"}}
+        Friends
+    {{/paper-button }}
+    {{#paper-button onClick=(transition-to 'index')}}
+      {{paper-icon "info"}}
+        About
+    {{/paper-button }}
+    <span class="flex"></span>
+    {{#paper-button onClick=(transition-to 'index')}}
+        {{paper-icon "person"}}
+        fry@futurama.com
+    {{/paper-button }}
+    {{#paper-button iconButton=true onClick=(transition-to 'admin')}}
+      {{paper-icon "more_vert"}}
+    {{/paper-button}}
+  {{/paper-toolbar-tools}}
+{{/paper-toolbar}}
+{{#paper-content class="md-padding layout-margin" }}
+  {{#paper-content class=""}}
+    {{liquid-outlet}}
+  {{/paper-content}}
+{{/paper-content}}

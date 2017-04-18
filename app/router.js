@@ -8,17 +8,19 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('admin', function(){
-    this.route('questions');
-    this.route('question/new');
-    this.route('question/edit');
-    this.route('players');
-    this.route('player/new');
-    this.route('player/edit');
-    this.route('avatars');
-    this.route('avatar/new');
-    this.route('avatar/edit');
-  });
-
+    this.route('questions')
+    this.route('question/new')
+    this.route('question/edit')
+    this.route('players')
+    this.route('player/new')
+    this.route('player/edit')
+    this.route('avatars')
+    this.route('avatar/new')
+    this.route('avatar/edit')
+  })
+  this.route('play', function(){
+    this.route('game')
+  })
 });
 
 export default Router;
