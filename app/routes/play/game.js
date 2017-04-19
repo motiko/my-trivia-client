@@ -11,8 +11,8 @@ export default Ember.Route.extend({
     }
   },
   actions: {
-    answer(properties) {
-
+    answer(question_id, answer_index) {
+      PlayApi.answer(question_id, answer_index).then(() => this.refresh())
     }
   }
 });

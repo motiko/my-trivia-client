@@ -5,9 +5,8 @@
     {{/title.text}}
   {{/card.title}}
 {{/paper-card}}
-{{debugger}}
-{{#each model.question.answers as |answer|}}
-  <div {{action "answer" answer}}>
+{{#each model.question.answers as |answer index|}}
+  <div {{action "answer" model.question.id index }}>
   {{#paper-card as  |card|}}
     {{#card.title as |title|}}
       {{#title.text as |text|}}

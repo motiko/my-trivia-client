@@ -17,6 +17,12 @@ export default {
           .then(response => response.json())
   },
 
+  answer(question_id, answer_index){
+    if(!this.headers) this.init()
+    return fetch(`/api/play/game/answer/${question_id}/${answer_index}`, {headers: this.headers, method: 'GET'})
+          .then(response => response.json())
+  },
+
   getQuestion(game_id){
     if(!this.headers) this.init()
     return fetch(`/api/play/game/${game_id}/get_question`, {headers: this.headers, method: 'GET'})
