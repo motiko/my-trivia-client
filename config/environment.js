@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'trivia',
+    modulePrefix: 'my-trivia',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',

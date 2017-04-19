@@ -1,0 +1,19 @@
+{{#paper-card as  |card|}}
+  {{#card.title as |title|}}
+    {{#title.text as |text|}}
+      {{#text.headline}}{{model.question.text}}{{/text.headline}}
+    {{/title.text}}
+  {{/card.title}}
+{{/paper-card}}
+{{debugger}}
+{{#each model.question.answers as |answer|}}
+  <div {{action "answer" answer}}>
+  {{#paper-card as  |card|}}
+    {{#card.title as |title|}}
+      {{#title.text as |text|}}
+        {{#text.headline}}{{answer}}{{/text.headline}}
+      {{/title.text}}
+    {{/card.title}}
+  {{/paper-card}}
+  </div>
+{{/each}}

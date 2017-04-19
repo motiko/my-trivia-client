@@ -20,6 +20,7 @@ Router.map(function() {
   })
   this.route('play', function(){
     this.route('game')
+    this.route('game', { path: '/game/:game_id' })
   })
 });
 
