@@ -19,13 +19,17 @@ export default Ember.Service.extend({
           .then(response => response.json())
   },
 
-  answer(question_id, answer_index){
-    return fetch(`/api/play/game/answer/${question_id}/${answer_index}`, {headers: this.headers, method: 'GET'})
+  getQuestion(game_id){
+    return fetch(`/api/play/game/${game_id}/get_question`,
+                    {headers: this.headers, method: 'GET'})
           .then(response => response.json())
   },
 
-  getQuestion(game_id){
-    return fetch(`/api/play/game/${game_id}/get_question`, {headers: this.headers, method: 'GET'})
+  answer(question_id, answer_index){
+    return fetch(`/api/play/game/answer/${question_id}/${answer_index}`,
+                    {headers: this.headers, method: 'GET'})
           .then(response => response.json())
   }
+
+
 });
